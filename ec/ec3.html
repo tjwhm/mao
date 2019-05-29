@@ -1,0 +1,712 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title></title><link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.701961); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid-page; break-before: avoid-page; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid-page; }
+  .typora-export #write::after { height: 0px; }
+  @page { margin: 20mm 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+/* meyer reset -- http://meyerweb.com/eric/tools/css/reset/ , v2.0 | 20110126 | License: none (public domain) */
+
+@include-when-export url(https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
+/* =========== */
+
+:root {
+	--active-file-bg-color: #dadada;
+	--active-file-bg-color: rgba(32, 43, 51, 0.63);
+	--active-file-text-color: white;
+	--bg-color: #f3f2ee;
+	--text-color: #1f0909;
+	--control-text-color: #444;
+	--rawblock-edit-panel-bd: #e5e5e5;
+
+	--select-text-bg-color: rgba(32, 43, 51, 0.63);
+  --select-text-font-color: white;
+}
+
+pre {
+	--select-text-bg-color: #36284e;
+	--select-text-font-color: #fff;
+}
+
+html {
+	font-size: 16px;
+}
+
+html, body {
+	background-color: #f3f2ee;
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+	color: #1f0909;
+	line-height: 1.5em;
+}
+
+/*#write {
+	overflow-x: auto;
+    max-width: initial;
+	padding-left: calc(50% - 17em);
+    padding-right: calc(50% - 17em);
+}
+
+@media (max-width: 36em) {
+ 	#write {
+ 		padding-left: 1em;
+    	padding-right: 1em;
+ 	}
+}*/
+
+#write {
+	max-width: 40em;
+}
+
+ol li {
+	list-style-type: decimal;
+	list-style-position: outside;
+}
+ul li {
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* styles */
+
+/* ====== */
+
+/* headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: bold;
+}
+h1 {
+	font-size: 1.875em;
+	/*30 / 16*/
+	line-height: 1.6em;
+	/* 48 / 30*/
+	margin-top: 2em;
+}
+h2,
+h3 {
+	font-size: 1.3125em;
+	/*21 / 16*/
+	line-height: 1.15;
+	/*24 / 21*/
+	margin-top: 2.285714em;
+	/*48 / 21*/
+	margin-bottom: 1.15em;
+	/*24 / 21*/
+}
+h3 {
+	font-weight: normal;
+}
+h4 {
+	font-size: 1.125em;
+	/*18 / 16*/
+	margin-top: 2.67em;
+	/*48 / 18*/
+}
+h5,
+h6 {
+	font-size: 1em;
+	/*16*/
+}
+h1 {
+	border-bottom: 1px solid;
+	margin-bottom: 1.875em;
+	padding-bottom: 0.8125em;
+}
+/* links */
+
+a {
+	text-decoration: none;
+	color: #065588;
+}
+a:hover,
+a:active {
+	text-decoration: underline;
+}
+/* block spacing */
+
+p,
+blockquote,
+.md-fences {
+	margin-bottom: 1.5em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 1.5em;
+}
+/* blockquote */
+
+blockquote {
+	font-style: italic;
+	border-left: 5px solid;
+	margin-left: 2em;
+	padding-left: 1em;
+}
+/* lists */
+
+ul,
+ol {
+	margin: 0 0 1.5em 1.5em;
+}
+/* tables */
+.md-meta,.md-before, .md-after {
+	color:#999;
+}
+
+table {
+	margin-bottom: 1.5em;
+	/*24 / 16*/
+	font-size: 1em;
+	/* width: 100%; */
+}
+thead th,
+tfoot th {
+	padding: .25em .25em .25em .4em;
+	text-transform: uppercase;
+}
+th {
+	text-align: left;
+}
+td {
+	vertical-align: top;
+	padding: .25em .25em .25em .4em;
+}
+
+code,
+.md-fences {
+	background-color: #dadada;
+}
+
+code {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.md-fences {
+	margin-left: 2em;
+	margin-bottom: 3em;
+	padding-left: 1ch;
+	padding-right: 1ch;
+}
+
+pre,
+code,
+tt {
+	font-size: .875em;
+	line-height: 1.714285em;
+}
+/* some fixes */
+
+h1 {
+	line-height: 1.3em;
+	font-weight: normal;
+	margin-bottom: 0.5em;
+}
+
+p + ul,
+p + ol{
+	margin-top: .5em;
+}
+
+h3 + ul,
+h4 + ul,
+h5 + ul,
+h6 + ul,
+h3 + ol,
+h4 + ol,
+h5 + ol,
+h6 + ol {
+	margin-top: .5em;
+}
+
+li > ul,
+li > ol {
+	margin-top: inherit;
+	margin-bottom: 0;
+}
+
+li ol>li {
+	list-style-type: lower-alpha;
+}
+
+li li ol>li{
+	list-style-type: lower-roman;
+}
+
+h2,
+h3 {
+	margin-bottom: .75em;
+}
+hr {
+	border-top: none;
+	border-right: none;
+	border-bottom: 1px solid;
+	border-left: none;
+}
+h1 {
+	border-color: #c5c5c5;
+}
+blockquote {
+	border-color: #bababa;
+	color: #656565;
+}
+
+blockquote ul,
+blockquote ol {
+	margin-left:0;
+}
+
+.ty-table-edit {
+	background-color: transparent;
+}
+thead {
+	background-color: #dadada;
+}
+tr:nth-child(even) {
+	background: #e8e7e7;
+}
+hr {
+	border-color: #c5c5c5;
+}
+.task-list{
+	padding-left: 1rem;
+}
+
+.md-task-list-item {
+	padding-left: 1.5rem;
+	list-style-type: none;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.25rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #F3F2EE;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+
+#write pre.md-meta-block {
+	min-height: 1.875rem;
+	color: #555;
+	border: 0px;
+	background: transparent;
+	margin-top: -4px;
+	margin-left: 1em;
+	margin-top: 1em;
+}
+
+.md-image>.md-meta {
+	color: #9B5146;
+}
+
+.md-image>.md-meta{
+	font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', serif;
+}
+
+
+#write>h3.md-focus:before{
+	left: -1.5rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h4.md-focus:before{
+	left: -1.5rem;
+	top: .25rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h5.md-focus:before{
+	left: -1.5rem;
+	top: .0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h6.md-focus:before{
+	left: -1.5rem;
+	top: 0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+
+.md-toc:focus .md-toc-content{
+	margin-top: 19px;
+}
+
+.md-toc-content:empty:before{
+	color: #065588;
+}
+.md-toc-item {
+	color: #065588;
+}
+#write div.md-toc-tooltip {
+	background-color: #f3f2ee;
+}
+
+#typora-sidebar {
+	background-color: #f3f2ee;
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+  	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+}
+
+.pin-outline #typora-sidebar {
+	background: inherit;
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+.pin-outline #typora-sidebar:hover .outline-title-wrapper {
+	border-left:1px dashed;
+}
+
+.outline-item:hover {
+  background-color: #dadada;
+  border-left: 28px solid #dadada;
+  border-right: 18px solid #dadada;
+}
+
+.typora-node .outline-item:hover {
+  	border-right: 28px solid #dadada;
+}
+
+.outline-expander:before {
+  content: "\f0da";
+  font-family: FontAwesome;
+  font-size:14px;
+  top: 1px;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  content: "\f0d7";
+}
+
+.modal-content {
+	background-color: #f3f2ee;
+}
+
+.auto-suggest-container ul li {
+	list-style-type: none;
+}
+
+/** UI for electron */
+
+.megamenu-menu,
+#top-titlebar, #top-titlebar *,
+.megamenu-content {
+	background: #f3f2ee;
+	color: #1f0909;
+}
+
+.megamenu-menu-header {
+	border-bottom: 1px dashed #202B33;
+}
+
+.megamenu-menu {
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+header, .context-menu, .megamenu-content, footer {
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+    color: #1f0909;
+}
+
+#megamenu-back-btn {
+	color: #1f0909;
+	border-color: #1f0909;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title:before {
+	color: #1f0909;
+}
+
+.megamenu-menu-list li a:hover, .megamenu-menu-list li a.active {
+	color: inherit;
+	background-color: #e8e7df;
+}
+
+.long-btn:hover {
+	background-color: #e8e7df;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+	background-color: #D2D1D1;
+}
+
+.btn-default {
+	background-color: transparent;
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+.ty-show-word-count #footer-word-count {
+	background: #c7c5c5;
+}
+
+#typora-quick-open {
+    background-color: inherit;
+}
+
+.md-diagram-panel {
+	margin-top: 8px;
+}
+
+.file-list-item-file-name {
+	font-weight: initial;
+}
+
+.file-list-item-summary {
+	opacity: 1;
+}
+
+.file-list-item {
+	color: #777;
+}
+
+.file-list-item.active {
+	background-color: inherit;
+	color: black;
+}
+
+.ty-side-sort-btn.active {
+	background-color: inherit;
+}
+
+.file-list-item.active .file-list-item-file-name  {
+	font-weight: bold;
+}
+
+.file-list-item{
+    opacity:1 !important;
+}
+
+.file-library-node.active>.file-node-background{
+	background-color: rgba(32, 43, 51, 0.63);
+	background-color: var(--active-file-bg-color);
+}
+
+.file-tree-node.active>.file-node-content{
+	color: white;
+	color: var(--active-file-text-color);
+}
+
+.md-task-list-item>input {
+	margin-left: -1.6em;
+	margin-top: calc(1rem - 12px);
+}
+
+input {
+	border: 1px solid #aaa;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title,
+.megamenu-menu-header:hover, 
+.megamenu-menu-header:focus {
+	color: inherit;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}
+
+/* https://github.com/typora/typora-issues/issues/2046 */
+.os-windows-7 strong,
+.os-windows-7 strong  {
+	font-weight: 760;
+}
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export' >
+<div  id='write'  class = 'is-mac'><p>2019年4月27日，政府与市场经济学国际学会（Society for the Analysis of Government and Economics, SAGE）成立大会暨首届政府与市场经济学国际年会在清华大学蒙民伟音乐厅召开。清华大学党委书记、校务委员会主任陈旭与SAGE学会发起者兼学会联合创始主席、清华大学中国经济思想与实践研究院院长（ACCEPT）李稻葵分别为大会致辞。</p><p> </p><p>受邀出席本次大会并发言的嘉宾还有：2007年诺贝尔经济学奖得主，哈佛大学经济学、数学教授埃里克·马斯金（Eric S. Maskin），哥伦比亚大学全球经济治理中心主任、教授扬·什韦纳尔（Jan Svejnar），伦敦政治经济学院全球事务研究中心主任、教授埃里克·伯格洛夫（Erik Berglof），中国社会科学院副院长蔡昉，北京大学新结构经济学研究院院长林毅夫，中国人民大学副校长刘元春，清华大学经济管理学院院长白重恩，北京大学国家发展研究院院长姚洋，北京大学经济学院院长董志勇，美联储圣路易斯分行助理副行长文一，北京大学光华管理学院副院长周黎安。会议由ACCEPT研究院副院长厉克奥博主持。</p><p> </p><p>李稻葵在开幕词中首先介绍了去年于清华校庆期间创立的ACCEPT研究院。李稻葵表示，研究院的使命，就是基于中国改革开放以来的经济实践与思想，为世界提供经济学新知。根据李稻葵的研究，一国的经济发展若要为学界理论发展做出贡献，要满足三个条件：首先，增长必须可持续：中国的快速增长已逾40年，且远未结束；其次，快速增长的成果需造福其他经济体：当下作为国际热点的一带一路峰会便是证明；其三，该国需与国际学者携手合作，阐明自身的实践成果，并将其在理论层面升华。</p><p>研究院在此基础上，明确了发展目标：第一，构建名为“政府与市场经济学”的新经济学分支，在经济发展中理清政府所扮演的角色，把政府看作市场经济的推动者、利益相关者，而非阻挡者；第二，在重大政策课题方面提供建议，推动国家进一步发展；第三，通过相关研究，提升清华大学自身经济学的建设。</p><p>李稻葵表示，SAGE学会的成立，正是基于ACCEPT研究院对于政府与市场经济学研究的使命。学会希望在世界范围内推动包括政府在市场经济中的激励、行为和作用在内的相关课题研究。作为一个国际学术组织，SAGE学会回避任何政治、社会、商业、民族等偏见，吸收了包括美国、欧洲、中国和其他发展中国家的顶尖学者。2007年诺贝尔经济学奖得主、哈佛大学经济学教授埃里克·马斯金和李稻葵一起，出任学会的联合创始主席。</p><p> </p><p>随后，埃里克·马斯金作为第一位发言嘉宾，以PPP（政府与企业合作）机制为切入点，同与会代表和现场听众介绍了政府和市场经济的关系。马斯金表示，在医疗、卫生、税务甚至制药行业，因投资大、风险高、且涉及到公共产品的服务和提供的关系，这些行业自身的问题无法有效地通过市场解决，所以需要政府和在特定领域具备专长的私营企业共同开发、运营。马斯金认为，不能把中国政府看做一个单一机构，事实上中央政府和地方政府在具体问题上亦存在矛盾。地方政府为了政绩需求，可能会选择成本高，但吸引眼球的“面子工程”，而PPP机制能够通过承包商和政府间成本的分担，帮助中央政府排挤真正的高成本项目，减少误伤，同时满足多个政策目标。</p><p> </p><p>扬·什韦纳尔首先肯定了中国近些年在经济发展和学术领域所取得的进步，随后又比较了世界范围内主要经济体在过去两个世纪内的发展。什韦纳尔认为，在过去60年世界经济结构的变化中，政府和国家起到了越来越重要、越来越多样化的作用，这也是SAGE成立的原因之一。经济崛起没有一刀切的发展，中国、东南亚和欧洲国家的发展都具自身特色。中国自改革开放以来，进行了大幅的制度改革，打破了苏联体系，在40年间积累了保持经济长期增长的能力。总结中国、美国、欧洲、日本等国家和地区的经验：第一，市场机制非常重要，所有成功的经济体都强调市场在资源配置方面的作用；第二，政府的宏观调控，对市场行为的前瞻、引导、催化，尤其是在研发、教育、基建等方面扮演着关键作用。</p><p> </p><p>埃里克·伯格洛夫从如何避免中等收入陷阱的角度，分析了国家产业政策对经济发展的影响。伯格洛夫认为，对于单个经济体而言，从中等跨入高等收入非常困难。这其中结构调整、社会公平、技术变革、人工智能、环境污染、就业减少等诸多因素都对新兴发展中国家构成制约。对后发经济体而言，为了实现跨越式发展，国家层面相对应的产业政策必不可少。首先，政府要有能力提供足够的公共产品；其次，政府要有独立的官僚体制以产生先发优势；第三，政府的司法和行政体系要独立，能够维持和执行竞争机制。</p><p>根据伯格洛夫的观点，不同发展阶段竞争所带来的结果不尽相同，竞争效果未必符合政府预期。因此在诸如产能调整的过程中，政府需要通过大胆放弃没有竞争力的企业，压缩企业的分散程度，实现提高能效、减少污染的目标。政府还需明确自身弱点，以垂直产业政策，有针对性地对特定部门加以支持和补充，从而推进整体经济发展水平的提升。伯格洛夫相信，正在转型期的中国，有潜力，也有能力向更高收入水平迈进。</p><p> </p><p>在SAGE学会的揭牌仪式上，清华大学校务委员会主席、党委书记陈旭代表校方上台致辞，对SAGE学会的成立表示祝贺。陈旭表示，清华大学一直非常重视经济学科建设，自1926年成立经济系以来，在人才培养、科学研究和国际交流等方面成果丰硕。ACCEPT研究院的建立和SAGE学会的成立，正是为了打造相关领域国际合作的交流平台，共同为经济学发展做出理论贡献，是国际经济学界之喜，也是清华大学之喜。</p><p>随后埃里克·马斯金再次上台，宣读了国际经济学会（IEA）和美国经济学会（AEA）发来的贺信。IEA主席考希克·巴苏（Kaushik Basu）在贺信中表示，他非常欣喜地得知SAGE学会成立，对马斯金和李稻葵教授担任创始主席充满信心与期待；AEA主席、前美联储主席本·伯南克（Ben Bernanke）则指出，政府和政府政策在所有经济体当中都发挥着至关重要的作用，非常支持成立SAGE学会，希望该学会的研究工作能够进一步加深人们对于政府和经济之间关系的理解。</p><p> </p><p>蔡昉教授认为，1990年前后是国际贸易格局的分化点。在此之前发展中国家和前计划经济国家较少参与国际贸易，之后情况则相反，因此出现了中等收入国家，低收入国家发展更快的趋势，从全球化中获益，而高收入国家相对收入下降，世界经济第一次出现了趋同的现象。全球绝对贫困人口在90年代以来有了大幅度的减少，其中中国贡献了76%。而全球化的收益在国家内部并没有得到平均分配。美国资本收益的提高没有被所有劳动者分享，出现了中等阶层的减少和中间技能产业岗位的消失。</p><p>对中国劳动者而言，2004年之前充裕的劳动力供给使得工资增长并不明显，2004年之后劳动力的短缺导致工资的迅速上涨，人口红利消失，资本配置带来的全要素生产力提高的速度下降。要保持未来的经济增长，需要更充分的竞争，熊彼特式的创造性破坏，政府与市场究竟谁优谁劣或如何结合的讨论随着发展阶段不同而不同。</p><p><img src='file:////var/folders/dy/fp2zkylj2b30fylv6864rs3r0000gn/T/com.kingsoft.wpsoffice.mac/wps-wang/ksohtml/wps0wI2fs.png' alt='img' referrerPolicy='no-referrer' /> </p><p>林毅夫教授认为，建国70年来中国的发展是经济学理论创新的金矿。改革开放是渐进的，不是一下子市场化、宏观稳定化。虽然当时国际主流的看法认为，认为中国这种转型方式是最糟糕的转型方式，但是中国实现了40年稳定和快速的发展，可以说是世界经济史上的奇迹，谁把这个道理解释清楚，一定可以产生新的理论。李稻葵和马斯金共同倡导成立的SAGE学会具备了天时、地利和人和三大要素。主流理论忽视了结构的内生性和转型经济扭曲的内生性，因而在具体实施中经常失败。发展中国家在资本密集的产业没有比较优势，没有自生能力，要想发展必须靠政府保护补贴，但是政府的干预扭曲导致资源的错误配置，以及各种激励机制的扭曲，所以发展不成功。很多转型期的国家，推行由市场决定的市场化，产权清晰的私有化，以及为此宏观稳定的稳定化，忽视了在转型期之前存在的保护补贴是一种扭曲。补贴消失后，这些产业必然都全部倒闭，造成大量失业。</p><p>从新结构经济学的角度来看，在经济发展和转型过程当中，处理好政府跟市场的关系，是至关重要的：有市场，资源才会得到好的配置，有竞争，才会有创新的激励，给先行者激励补偿。但同时在产业升级，技术创新过程中，要靠政府来发挥作用完善教育、金融和基础设施建设。主流经济学在发展中国家的应用，普遍有一个现象，讲问题可以讲得很清楚，但按照那样做，基本上都失败了。新成立的SAGE学会把政府跟市场的经济学作为研究的重点，是非常合适的，预祝SAGE学会能够帮助发展中国家认识世界，作为北大新结构经济学研究院，非常期盼作为学会的一员，共同抓住时代机遇，推动经济学理论发展。</p><p> </p><p>刘元春指出，中国政府与市场间的关系，并非并行和替代，不像西方国家先有市场，后有主权国家。中国的市场经济是在政府主导下逐步建立的。从历史学派，到结构主义，然后再到制度经济学，再到这几年的新政治经济学，传统的理论范式和关注焦点，与中国模式并不完全一致。原因是中国经济的崛起不是简单的一个落后国家向现代化迈进的进程，也不是简单的从封闭向开放的转变，更不是先发国家早期工业化的一种模式。因此，用增长理论、发展理论或其他理论解释中国现象的时有很多的不足。</p><p>刘元春表示，此类不足所体现的问题，是在标准经济学里面所设定的最理想的资源配置的范式，与中国资源配置的范式不太一致。中国市场所产生的过程，并非遵循市场失灵、政府干预的二分化逻辑，而恰恰是在政府主导的前提下创立市场经济，并通过不断开放和改革，形成相对竞争的市场主体、市场制度和市场体系。刘元春坚信，中国的崛起提供了成功的事实案例，使理论工作者大有可为。</p><p> </p><p>白重恩认为，基础设施建设有两个维度：一类是物质性的，一类是制度性的。过去40年间，我们的政府虽在改善制度方面付出巨大努力，但仍不足够。在制度不尽完善，各部门间规章甚至互相冲突的情况下，政府在处理政商关系时经常面临两难选择：按部就班，或不利经济发展；给与特惠，则有违公平原则。白重恩指出，虽然建立普惠的营商环境最为理想，但在漫长的过渡期中，“特惠模式”对中国经济发展起到了非常重要的作用。在特定的历史条件下，如果过于追求完美，则可能丧失退而求其次的机会。</p><p> </p><p>姚洋认为，中国之所以在过去40年中快速发展，并非在经济层面有何独到创造。探寻中国成功奥秘，需研究政府角色，研究中国政府为何采用了优良的经济政策。要把中国的政治经济学搞清，首先要研究中国共产党的变化，其次是如何激励、选拔和培养官员。改革开放以来，中国共产党的制度化、政府的中性化、务实主义哲学的回归、以分权制度为特征的国家治理模式和官员选拔制度，促成中国在经济社会各方面的快速发展。姚洋祝贺了SAGE学会的成立，认为此举超前，对促进中国的政治经济学研究起到积极的推动作用。北大国发院愿意成为这个学会的一部分，促进中国经济学的进步。</p><p> </p><p>董志勇表示，中国改革开放的巨大成功，归因于计划经济到市场经济的转变、封闭到开放的转变、对个人权益的政府保护到产权保护的转变、资源配置者由政府官僚到企业家的转变以及中央动员的经济发展模式到地方竞争模式的转变。董志勇认为，中国在过去40年里的经济发展，可以为政府和市场的关系提供更多、更好的例证，并从国有经济、产业政策、宏观调控、资源配置与创造、政府的自我纠错与为民谋福利五个方面进行了阐述。</p><p> </p><p>文一指出，现代工业社会是一个复杂有机体，并由国家分阶段来创造、塑形。从英国、美国、日本和中国的历史来看，要让市场机制在工业化的进程中发挥作用，一定要有规模化大生产。而培养市场的厚度和深度，离不开政府这只看得见的手。文一认为，社会福利、民主政治等软的基础设施通常是经济社会发展的结果，而不是原因。现在西方一些好的东西，是通过工业化的推动内生生长出的模式，不能盲目照搬。总之，要工业化、走向富裕就需要一个执行正确产业政策的强大的中央政府。政府要遵循市场规律，就要研究市场规律，这也是SAGE学会成立的重要意义。</p><p> </p><p>周黎安作为最后一位进行主旨演讲的嘉宾，讨论了关于中国政府和市场互动关系，认为中国开创了一个所谓双市场竞争，或者说是官场+市场的竞争模式，促进了经济增长。地方官员晋升中的重要指标是经济发展绩效，可能是GDP，也可能是财税，或两者都是，但核心是取决于当地企业创造的市场附加值。因此，不同地域官员和企业之间的竞争被连接起来，导致辖区内的地方官员会和当地的企业紧密合作，或通过产业政策，或通过其他政企合作方式，保证本地区企业在市场上有足够的竞争力。这种竞争给了地方官员强烈的激励，通过市场要素的跨地域流动，促使政府改善营商环境，从“掠夺之手”转变为“帮助之手”。但周黎安同时指出，这种模式并不完美，官场与市场竞争的逻辑不尽相同，也有可能导致各种各样的问题</p><p>会后，ACCPET学院又在清华大学苏世民书院进行了相关论文的研讨，来自清华大学、中国社科院、中国人民大学、复旦大学、上海交通大学、中山大学、武汉大学、中央财经大学、中欧国际商学院等高校的多位专家学者就政府的经济激励、政府作为市场经济的重要参与者以及政府对经济影响等议题展开了深入探讨。</p></div>
+</body>
+</html>
