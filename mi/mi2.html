@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>mi2</title><link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:first-child { margin-top: -20px; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  @page { margin: 20mm 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+:root { --active-file-bg-color: rgba(32, 43, 51, 0.63); --active-file-text-color: white; --bg-color: #f3f2ee; --text-color: #1f0909; --control-text-color: #444; --rawblock-edit-panel-bd: #e5e5e5; --select-text-bg-color: rgba(32, 43, 51, 0.63); --select-text-font-color: white; }
+pre { --select-text-bg-color: #36284e; --select-text-font-color: #fff; }
+html { font-size: 16px; }
+html, body { background-color: rgb(243, 242, 238); font-family: "PT Serif", "Times New Roman", Times, serif; color: rgb(31, 9, 9); line-height: 1.5em; }
+#write { max-width: 40em; }
+ol li { list-style-type: decimal; list-style-position: outside; }
+ul li { list-style-type: disc; list-style-position: outside; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote::before, blockquote::after, q::before, q::after { content: none; }
+table { border-collapse: collapse; border-spacing: 0px; }
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+h1 { font-size: 1.875em; line-height: 1.6em; margin-top: 2em; }
+h2, h3 { font-size: 1.3125em; line-height: 1.15; margin-top: 2.28571em; margin-bottom: 1.15em; }
+h3 { font-weight: normal; }
+h4 { font-size: 1.125em; margin-top: 2.67em; }
+h5, h6 { font-size: 1em; }
+h1 { border-bottom: 1px solid; margin-bottom: 1.875em; padding-bottom: 0.8125em; }
+a { text-decoration: none; color: rgb(6, 85, 136); }
+a:hover, a:active { text-decoration: underline; }
+p, blockquote, .md-fences { margin-bottom: 1.5em; }
+h1, h2, h3, h4, h5, h6 { margin-bottom: 1.5em; }
+blockquote { font-style: italic; border-left: 5px solid; margin-left: 2em; padding-left: 1em; }
+ul, ol { margin: 0px 0px 1.5em 1.5em; }
+.md-meta, .md-before, .md-after { color: rgb(153, 153, 153); }
+table { margin-bottom: 1.5em; font-size: 1em; }
+thead th, tfoot th { padding: 0.25em 0.25em 0.25em 0.4em; text-transform: uppercase; }
+th { text-align: left; }
+td { vertical-align: top; padding: 0.25em 0.25em 0.25em 0.4em; }
+code, .md-fences { background-color: rgb(218, 218, 218); }
+code { padding-left: 2px; padding-right: 2px; }
+.md-fences { margin-left: 2em; margin-bottom: 3em; padding-left: 1ch; padding-right: 1ch; }
+pre, code, tt { font-size: 0.875em; line-height: 1.71429em; }
+h1 { line-height: 1.3em; font-weight: normal; margin-bottom: 0.5em; }
+p + ul, p + ol { margin-top: 0.5em; }
+h3 + ul, h4 + ul, h5 + ul, h6 + ul, h3 + ol, h4 + ol, h5 + ol, h6 + ol { margin-top: 0.5em; }
+li > ul, li > ol { margin-top: inherit; margin-bottom: 0px; }
+li ol > li { list-style-type: lower-alpha; }
+li li ol > li { list-style-type: lower-roman; }
+h2, h3 { margin-bottom: 0.75em; }
+hr { border-top: none; border-right: none; border-bottom: 1px solid; border-left: none; }
+h1 { border-color: rgb(197, 197, 197); }
+blockquote { border-color: rgb(186, 186, 186); color: rgb(101, 101, 101); }
+blockquote ul, blockquote ol { margin-left: 0px; }
+.ty-table-edit { background-color: transparent; }
+thead { background-color: rgb(218, 218, 218); }
+tr:nth-child(2n) { background: rgb(232, 231, 231); }
+hr { border-color: rgb(197, 197, 197); }
+.task-list { padding-left: 1rem; }
+.md-task-list-item { padding-left: 1.5rem; list-style-type: none; }
+.md-task-list-item > input::before { content: "√"; display: inline-block; width: 1.25rem; height: 1.6rem; vertical-align: middle; text-align: center; color: rgb(221, 221, 221); background-color: rgb(243, 242, 238); }
+.md-task-list-item > input:checked::before, .md-task-list-item > input[checked]::before { color: inherit; }
+#write pre.md-meta-block { min-height: 1.875rem; color: rgb(85, 85, 85); border: 0px; background: transparent; margin-left: 1em; margin-top: 1em; }
+.md-image > .md-meta { color: rgb(155, 81, 70); }
+.md-image > .md-meta { font-family: Menlo, "Ubuntu Mono", Consolas, "Courier New", "Microsoft Yahei", "Hiragino Sans GB", "WenQuanYi Micro Hei", serif; }
+#write > h3.md-focus::before { left: -1.5rem; color: rgb(153, 153, 153); border-color: rgb(153, 153, 153); }
+#write > h4.md-focus::before { left: -1.5rem; top: 0.25rem; color: rgb(153, 153, 153); border-color: rgb(153, 153, 153); }
+#write > h5.md-focus::before { left: -1.5rem; color: rgb(153, 153, 153); border-color: rgb(153, 153, 153); }
+#write > h6.md-focus::before { left: -1.5rem; top: 0.3125rem; color: rgb(153, 153, 153); border-color: rgb(153, 153, 153); }
+.md-toc:focus .md-toc-content { margin-top: 19px; }
+.md-toc-content:empty::before { color: rgb(6, 85, 136); }
+.md-toc-item { color: rgb(6, 85, 136); }
+#write div.md-toc-tooltip { background-color: rgb(243, 242, 238); }
+#typora-sidebar { background-color: rgb(243, 242, 238); box-shadow: rgba(0, 0, 0, 0.376) 0px 6px 12px; }
+.pin-outline #typora-sidebar { background: inherit; box-shadow: none; border-right: 1px dashed; }
+.pin-outline #typora-sidebar:hover .outline-title-wrapper { border-left: 1px dashed; }
+.outline-item:hover { background-color: rgb(218, 218, 218); border-left: 28px solid rgb(218, 218, 218); border-right: 18px solid rgb(218, 218, 218); }
+.typora-node .outline-item:hover { border-right: 28px solid rgb(218, 218, 218); }
+.outline-expander::before { content: ""; font-family: FontAwesome; font-size: 14px; top: 1px; }
+.outline-expander:hover::before, .outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.modal-content { background-color: rgb(243, 242, 238); }
+.auto-suggest-container ul li { list-style-type: none; }
+.megamenu-menu, #top-titlebar, #top-titlebar *, .megamenu-content { background: rgb(243, 242, 238); color: rgb(31, 9, 9); }
+.megamenu-menu-header { border-bottom: 1px dashed rgb(32, 43, 51); }
+.megamenu-menu { box-shadow: none; border-right: 1px dashed; }
+header, .context-menu, .megamenu-content, footer { font-family: "PT Serif", "Times New Roman", Times, serif; color: rgb(31, 9, 9); }
+#megamenu-back-btn { color: rgb(31, 9, 9); border-color: rgb(31, 9, 9); }
+.megamenu-menu-header #megamenu-menu-header-title::before { color: rgb(31, 9, 9); }
+.megamenu-menu-list li a:hover, .megamenu-menu-list li a.active { color: inherit; background-color: rgb(232, 231, 223); }
+.long-btn:hover { background-color: rgb(232, 231, 223); }
+#recent-file-panel tbody tr:nth-child(2n-1) { background-color: transparent !important; }
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) { color: inherit; }
+.megamenu-menu-panel .btn { background-color: rgb(210, 209, 209); }
+.btn-default { background-color: transparent; }
+.typora-sourceview-on #toggle-sourceview-btn, .ty-show-word-count #footer-word-count { background: rgb(199, 197, 197); }
+#typora-quick-open { background-color: inherit; }
+.md-diagram-panel { margin-top: 8px; }
+.file-list-item-file-name { font-weight: initial; }
+.file-list-item-summary { opacity: 1; }
+.file-list-item { color: rgb(119, 119, 119); }
+.file-list-item.active { background-color: inherit; color: black; }
+.ty-side-sort-btn.active { background-color: inherit; }
+.file-list-item.active .file-list-item-file-name { font-weight: bold; }
+.file-list-item { opacity: 1 !important; }
+.file-library-node.active > .file-node-background { background-color: var(--active-file-bg-color); }
+.file-tree-node.active > .file-node-content { color: var(--active-file-text-color); }
+.md-task-list-item > input { margin-left: -1.6em; margin-top: calc(1rem - 12px); }
+input { border: 1px solid rgb(170, 170, 170); }
+.megamenu-menu-header #megamenu-menu-header-title, .megamenu-menu-header:hover, .megamenu-menu-header:focus { color: inherit; }
+.dropdown-menu .divider { border-color: rgb(229, 229, 229); }
+.os-windows-7 strong, .os-windows-7 strong { font-weight: 760; }
+
+
+
+
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><p>055型1号舰</p><p>排水量：标准12000多吨，满载14000吨</p><p>武器：112单元导弹垂直发射系统  </p><p>1座130毫米单管主炮  </p><p>1座H/PJ-11型近防炮系统</p><p>1座HQ-10近程舰空导弹发射装置</p><p>4座4×8多用途发射器  </p><p>直升机：两架</p><p><a href='mi2-1.jpg'><img src='mi2-1.jpg' alt='mi2-1.jpg' referrerPolicy='no-referrer' /></a> </p><p><a href='mi2-1.jpg'><img src='mi2-2.jpg' alt='mi2-2.jpg' referrerPolicy='no-referrer' /></a> </p><p>&nbsp;</p><p>远望7号</p><p>远望7号，航天远洋测量船，2012年9月20日批准立项，2014年10月10日在江南造船集团公司开工建造，2015年10月15日下水，2016年7月12日正式入列中国卫星海上测控部。</p><p><a href='mi2-1.jpg'><img src='mi2-3.jpg' alt='mi2-3.jpg' referrerPolicy='no-referrer' /></a> </p><p><a href='mi2-1.jpg'><img src='mi2-4.jpg' alt='mi2-4.jpg' referrerPolicy='no-referrer' /></a> </p><p><a href='mi2-1.jpg'><img src='mi2-5.png' alt='mi2-5.png' referrerPolicy='no-referrer' /></a> </p><p>&nbsp;</p><p>第二艘航空母舰</p><p>第二艘航空母舰，由我国自行研制，2013年11月开工，2015年3月开始坞内建造，2017年4月26日上午在中国船舶重工集团公司大连造船厂举行了下水仪式。
+（注：参数不详，以下为辽宁舰参数）</p><p>主尺寸：舰长304米、水线281米、舰宽70.5米、吃水11米</p><p>飞行甲板：长300米、宽70米</p><p>排水量：57000吨（标准） 64000吨（满载）</p><p>航　速：最高航速32节</p><p>动　力：4台蒸汽轮机，总计20万马力，4轴4桨双舵</p><p>续航力：4000海里/30节</p><p>武器装备：3套海红旗10十八联装近程防空导弹发射装置 </p><p>3套1030型30毫米近防炮</p><p>2座12管反潜火箭深弹发射器</p><p>4座24管多用途发射器</p><p>2座2X8管烟雾弹发射器</p><p>舰载机：大于50架：歼-15舰载战斗机；直-9舰载反潜/多用途直升机；卡-27反潜直升机；卡-31预警直升机；直-8重型直升机</p><p> <a href='mi2-1.jpg'><img src='mi2-6.jpg' alt='mi2-6.jpg' referrerPolicy='no-referrer' /></a> </p><p><a href='mi2-1.jpg'><img src='mi2-7.jpg' alt='mi2-7.jpg' referrerPolicy='no-referrer' /></a> </p><p> </p><p>095型攻击核潜艇</p><p>095型攻击核潜艇（设计代号：09-Ⅴ，英文：Type 095），是中国海军隶下的最新一型攻击型核潜艇，是093型攻击核潜艇的后继型，是中国自行设计建造的第三代攻击型核潜艇。</p><p>095型攻击核潜艇性能比093型更加先进，采用所有最新降噪措施。动力系统采用最新型的无轴泵推技术。在武器装备方面，095型可能装备有更先进的鹰击-62反舰导弹和CY-3反潜导弹，还将拥有垂直发射系统，可发射“东海-10”改进型潜射对陆巡航导弹，这种导弹的射程可以达到2000千米，可打击敌纵深目标。095型可装备巡航导弹、反舰导弹、鱼雷等武器。</p><p><a href='mi2-1.jpg'><img src='mi2-8.jpg' alt='mi2-8.jpg' referrerPolicy='no-referrer' /></a> </p><p>歼-20（J-20）</p><p>又名威龙，由成都飞机设计研究所设计、成都飞机工业集团生产、装备中国人民解放军空军的单座、双发、鸭式气动布局重型隐形战机，是第五代战斗机。由成飞总设计师杨伟主导。</p><p>歼-20作为中国首款第五代战斗机，融合了全球多种已经在使用的优秀战斗机的特点，具备很强的隐形性能、机动性能。比如美国F-35的光电分布孔径系统（EODAS），也被技术人员整合到歼-20战斗机上。歼-20是世界上第二架应用EODAS的战斗机。歼-20是首款采用鸭式气动布局的隐身战斗机，采用DSI鼓包进气道。</p><p><a href='mi2-9.jpg'><img src='mi2-9.jpg' alt='mi2-9.jpg' referrerPolicy='no-referrer' /></a> </p><p>&nbsp;</p><p>运-20</p><p>运-20（中国编号：Y-20，绰号：鲲鹏，英文：Xian Y-20），是中国研究制造的新一代军用大型运输机，由中国航空工业集团公司第一飞机设计研究院设计、西安飞机工业集团（简称：西飞）为主制造，并于2013年1月26日首飞成功。</p><p>运-20飞机研发参考俄罗斯伊尔-76的气动外形和结构设计，融合美国C-17的部分特点。运-20采用常规布局，悬臂式上单翼、前缘后掠、无翼梢小翼，最大起飞重量220吨，载重超过66吨，最大时速≥800千米，航程大于7800千米，实用升限13000米。拥有高延伸性、高可靠性和安全性。运-20作为大型多用途运输机，可在复杂气象条件下，执行各种物资和人员的长距离航空运输任务。</p><p>运-20采用超临界机翼、轻质复合材料、在空气动力学、大型结构的设计和制造、机载设备、高可靠性操纵系统的研制等方面，都有重大突破。航空电子系统的技术水平已达到当今世界先进水平。</p><p><a href='mi2-9.jpg'><img src='mi2-10.jpg' alt='mi2-10.jpg' referrerPolicy='no-referrer' /></a> </p><p>&nbsp;</p><p>歼-31</p><p>歼-31（中国编号：J-31，绰号：鹘鹰，英译：Gyrfalcon，英文：Shenyang J-31）战斗机，是中国航空工业集团公司沈阳飞机工业集团公司（简称：中航工业沈飞）研制的第五代单座双发隐形战斗机。</p><p>该机是针对国际市场需求研发的隐身多用途战斗机，综合作战效能优异，具有自主知识产权。该机采用单座、双发、外倾双垂尾、全动平尾的常规气动布局，两侧布置大S弯进气道，设有内置弹舱。</p><p><a href='mi2-9.jpg'><img src='mi2-11.png' alt='mi2-11.png' referrerPolicy='no-referrer' /></a> </p><p>&nbsp;</p><p>歼-16</p><p>是中国沈阳飞机公司在歼-11战斗机基础上发展研制的三代半双座双发多用途战斗机。</p><p>歼-16是中国新一代歼击轰炸机，它配备了有源相控阵雷达等新型航空电子设备，并且可以使用红外成像制导格斗空空导弹等新型武器，具备较强的对空、对地攻击作战能力，歼-16可以同时执行空空和空地任务，是新世纪中国空军对地打击的主力。</p><p>歼-16战机是中国自主研发的一款双座、重型多用途战斗机，它既可完成制空作战任务，也能实施对地、对海打击，是中国空军攻防兼备转型重要装备之一。歼-16战机自2017年7月首次在庆祝中国人民解放军建军90周年阅兵中亮相以来，已装备多支歼击航空兵部队，助力空军提高作战能力 [9]  。歼-16的出现让中国空军开始逐渐走向攻防兼备，让空、海军作战实现了作战中的任务转换，朝着联合作战目标更近一步，具有很强的划时代意义。这一点与歼-20的出现相比，毫不逊色。</p><p> <a href='mi2-9.jpg'><img src='mi2-12.jpg' alt='mi2-12.jpg' referrerPolicy='no-referrer' /></a> </p><p><a href='mi2-9.jpg'><img src='mi2-13.jpg' alt='mi2-13.jpg' referrerPolicy='no-referrer' /></a> </p><p>&nbsp;</p><p>歼-10C</p><p>高性能战机，长于争夺制空权，同时兼具对地攻击能力。与歼-10比肩的是美国的F-16、俄罗斯的米格-29以及法国的&quot;阵风&quot;战斗机等。相比而言，歼-10的机动能力较好，空战时有一定优势。在执行国土防空、空战格斗、陆海空联合攻击等任务时都能有上乘表现。</p><p> <a href='mi2-9.jpg'><img src='mi2-14.jpg' alt='mi2-14.jpg' referrerPolicy='no-referrer' /></a> </p><p> <a href='mi2-9.jpg'><img src='mi2-15.jpg' alt='mi2-15.jpg' referrerPolicy='no-referrer' /></a>         </p><p>&nbsp;</p><p>利剑隐身无人攻击机</p><p>利剑隐身无人攻击机是由中航工业沈阳飞机设计研究所主持设计，中航工业洪都公司制造的工程试验机，2013年5月进入地面滑行测试，这意味着“利剑”无人机距离首飞更近了一步，也意味着中国将抢在英国“雷神”无人机之前，继美国的X-47B无人机和欧洲“神经元”无人机之后，成为世界第三个试飞大型隐身无人攻击机的国家。</p><p><a href='mi2-9.jpg'><img src='mi2-16.jpg' alt='mi2-16.jpg' referrerPolicy='no-referrer' /></a>         </p><p><a href='mi2-17.jpg'><img src='mi2-17.jpg' alt='mi2-17.jpg' referrerPolicy='no-referrer' /></a>         </p><p>&nbsp;</p><p>暗剑无人机</p><p>暗剑无人机是一种体积大于歼-7又略小于歼-8的中型无人战斗机，暗剑无人机的超音速飞行能力以及较为突出的隐形能力，再加上能携带四枚我国当下最先进的主动雷达制导空空导弹SD-10，这使暗剑无人机能成为集侦察、攻击为一体的现代化先进无人作战飞行平台。</p><p><a href='mi2-17.jpg'><img src='mi2-18.jpg' alt='mi2-18.jpg' referrerPolicy='no-referrer' /></a>         </p><p>&nbsp;</p><p>彩虹-5无人机</p><p>彩虹-5无人机（中国代号：CH-5），是中国航天科技集团公司研制的中空长航时无人机。该机翼展20余米，具有重油动力、载重大、航时长、航程远等巨大优势，其可靠性、安全性大幅提升。该机可挂载多种武器，使用灵活性强。</p><p><a href='mi2-17.jpg'><img src='mi2-19.jpg' alt='mi2-19.jpg' referrerPolicy='no-referrer' /></a>         </p><p>&nbsp;</p><p>中国激光武器</p><p>激光武器是一种定向能武器，利用强大的定向发射的激光束直接毁伤目标或使之失效。它是利用高亮度强激光束携带的巨大能量摧毁或杀伤敌方飞机、导弹、卫星和人员等目标的高技术新概念武器。</p><p>强激光武器有着其它武器无可比拟的优点，强激光武器具有速度快、精度高、拦截距离远、火力转移迅速、不受外界电磁波干扰、持续战斗力强等优点。正因为如此，美、俄、英、德、法、以色列等许多西方国家都在积极发展强激光武器。激光武器经过三十多年的研究，已经日趋成熟并将在今后战场上发挥越来越重要的作用。</p><p><a href='mi2-17.jpg'><img src='mi2-20.jpg' alt='mi2-20.jpg' referrerPolicy='no-referrer' /></a>      </p><p>&nbsp;</p><p>东风-26弹道导弹</p><p>东风-26弹道导弹是中国第一代液体弹道导弹更新换代的产物，是新一代中远程固体燃料弹道导弹 ，为核常兼备导弹，且具备打击大型水面舰艇的能力，最大射程可达3000至4000千米，覆盖关岛甚至迭戈加西亚群岛，使中国拥有了可靠的打击第二岛链固定目标和大型舰艇等目标能力，是衔接东风-21弹道导弹与东风-31弹道导弹的主力中远程弹道导弹</p><p><a href='mi2-17.jpg'><img src='mi2-21.jpg' alt='mi2-21.jpg' referrerPolicy='no-referrer' /></a>      </p><p><a href='mi2-17.jpg'><img src='mi2-22.jpg' alt='mi2-22.jpg' referrerPolicy='no-referrer' /></a>      </p><p>&nbsp;</p><p>东风-21D型导弹</p><p>代号DF-21D，它是中国第二代中程地地战略导弹。该型导弹是东风-21型导弹的改进型,采用二级固体燃料火箭发动机，公路机动发射，最大射程2700公里。它也是一种可以攻击包含航空母舰在内海上船舰的反舰弹道导弹。</p><p><a href='mi2-17.jpg'><img src='mi2-23.jpg' alt='mi2-23.jpg' referrerPolicy='no-referrer' /></a>      </p><p>&nbsp;</p><p>巨浪3</p><p>巨浪-3（JL-3）是中华人民共和国目前研制中第三代洲际潜射弹道导弹，最远射程逾10,000公里，可以携带单个或者多个核弹头，预计部署在096型核潜艇上。美国媒体称巨浪-3是由陆基型的东风-41改良而成，在中国近海发射即可覆盖美欧全境，预计在2020年服役。</p><p><a href='mi2-17.jpg'><img src='mi2-24.jpg' alt='mi2-24.jpg' referrerPolicy='no-referrer' /></a>      </p></div>
+</body>
+</html>
